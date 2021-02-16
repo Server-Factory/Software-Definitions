@@ -6,10 +6,6 @@
       "installationSteps": {
         "Ubuntu": [
           {
-            "type": "deploy",
-            "value": "{{SYSTEM.HOME}}/Core/Utils:{{SERVER.SERVER_HOME}}/Utils"
-          },
-          {
             "type": "skipCondition",
             "value": "docker --version"
           },

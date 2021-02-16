@@ -6,10 +6,6 @@
       "installationSteps": {
         "Fedora": [
           {
-            "type": "deploy",
-            "value": "{{SYSTEM.HOME}}/Core/Utils:{{SERVER.SERVER_HOME}}/Utils"
-          },
-          {
             "type": "skipCondition",
             "value": "docker --version"
           },
@@ -80,10 +76,6 @@
         ],
         "Fedora_31": [
           {
-            "type": "deploy",
-            "value": "{{SYSTEM.HOME}}/Core/Utils:{{SERVER.SERVER_HOME}}/Utils"
-          },
-          {
             "type": "skipCondition",
             "value": "docker --version"
           },
@@ -153,10 +145,6 @@
           }
         ],
         "Fedora_30": [
-          {
-            "type": "deploy",
-            "value": "{{SYSTEM.HOME}}/Core/Utils:{{SERVER.SERVER_HOME}}/Utils"
-          },
           {
             "type": "skipCondition",
             "value": "docker --version"
