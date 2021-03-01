@@ -27,7 +27,7 @@
           },
           {
             "type": "command",
-            "value": "sh {{SERVER.SERVER_HOME}}/Utils/setenforce.sh"
+            "value": "sh {{SERVER.HOME}}/Utils/setenforce.sh"
           },
           {
             "type": "packagesErase",
