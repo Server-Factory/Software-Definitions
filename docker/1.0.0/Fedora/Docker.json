@@ -19,7 +19,7 @@
           },
           {
             "type": "command",
-            "value": "sh {{SERVER.HOME}}/Utils/setenforce.sh"
+            "value": "sh {{SERVER.UTILS_HOME}}/setenforce.sh"
           },
           {
             "type": "packagesErase",
@@ -89,7 +89,7 @@
           },
           {
             "type": "command",
-            "value": "sh {{SERVER.HOME}}/Utils/setenforce.sh"
+            "value": "sh {{SERVER.UTILS_HOME}}/setenforce.sh"
           },
           {
             "type": "packagesErase",
@@ -163,7 +163,7 @@
           },
           {
             "type": "command",
-            "value": "sh {{SERVER.HOME}}/Utils/setenforce.sh"
+            "value": "sh {{SERVER.UTILS_HOME}}/setenforce.sh"
           },
           {
             "type": "packagesErase",
