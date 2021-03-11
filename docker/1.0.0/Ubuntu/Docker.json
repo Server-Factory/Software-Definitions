@@ -47,6 +47,10 @@
           },
           {
             "type": "command",
+            "value": "sh {{SERVER.UTILS_HOME}}/docker_configuration_proxy_init.sh {{PROXY.HOST}} {{PROXY.PORT}} {{PROXY.ACCOUNT}} {{PROXY.PASSWORD}}"
+          },
+          {
+            "type": "command",
             "value": "docker run --rm hello-world"
           },
           {
