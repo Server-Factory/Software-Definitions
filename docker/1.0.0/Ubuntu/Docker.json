@@ -51,6 +51,10 @@
           },
           {
             "type": "command",
+            "value": "docker login -u '{{DOCKER.LOGIN.ACCOUNT}}' -p '{{DOCKER.LOGIN.PASSWORD}}'"
+          },
+          {
+            "type": "command",
             "value": "docker run --rm hello-world"
           },
           {
