@@ -51,10 +51,6 @@
           },
           {
             "type": "command",
-            "value": "sh {{SERVER.UTILS_HOME}}/docker_configuration_proxy_init.sh {{PROXY.HOST}} {{PROXY.PORT}} {{PROXY.ACCOUNT}} {{PROXY.PASSWORD}}"
-          },
-          {
-            "type": "command",
             "value": "systemctl enable --now docker"
           },
           {
@@ -71,7 +67,7 @@
           },
           {
             "type": "command",
-            "value": "docker run --rm hello-world"
+            "value": "sh {{SERVER.UTILS_HOME}}/docker_configuration_proxy_init.sh {{PROXY.HOST}} {{PROXY.PORT}} {{PROXY.ACCOUNT}} {{PROXY.PASSWORD}}"
           },
           {
             "type": "reboot",
@@ -129,10 +125,6 @@
           },
           {
             "type": "command",
-            "value": "sh {{SERVER.UTILS_HOME}}/docker_configuration_proxy_init.sh {{PROXY.HOST}} {{PROXY.PORT}} {{PROXY.ACCOUNT}} {{PROXY.PASSWORD}}"
-          },
-          {
-            "type": "command",
             "value": "systemctl enable --now docker"
           },
           {
@@ -149,7 +141,7 @@
           },
           {
             "type": "command",
-            "value": "docker run --rm hello-world"
+            "value": "sh {{SERVER.UTILS_HOME}}/docker_configuration_proxy_init.sh {{PROXY.HOST}} {{PROXY.PORT}} {{PROXY.ACCOUNT}} {{PROXY.PASSWORD}}"
           },
           {
             "type": "reboot",
@@ -199,10 +191,6 @@
           },
           {
             "type": "command",
-            "value": "sh {{SERVER.UTILS_HOME}}/docker_configuration_proxy_init.sh {{PROXY.HOST}} {{PROXY.PORT}} {{PROXY.ACCOUNT}} {{PROXY.PASSWORD}}"
-          },
-          {
-            "type": "command",
             "value": "systemctl start docker"
           },
           {
@@ -211,7 +199,7 @@
           },
           {
             "type": "command",
-            "value": "docker run --rm hello-world"
+            "value": "sh {{SERVER.UTILS_HOME}}/docker_configuration_proxy_init.sh {{PROXY.HOST}} {{PROXY.PORT}} {{PROXY.ACCOUNT}} {{PROXY.PASSWORD}}"
           },
           {
             "type": "command",
