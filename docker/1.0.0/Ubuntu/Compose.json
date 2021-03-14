@@ -11,14 +11,6 @@
           },
           {
             "type": "command",
-            "value": "apt update -y"
-          },
-          {
-            "type": "command",
-            "value": "apt upgrade -y"
-          },
-          {
-            "type": "command",
             "value": "apt autoremove -y"
           },
           {
