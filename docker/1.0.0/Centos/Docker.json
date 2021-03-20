@@ -47,6 +47,10 @@
           },
           {
             "type": "command",
+            "value": "sh {{SERVER.UTILS_HOME}}/disable_iptables_for_avahi_mdns.sh {{BEHAVIOR.DISABLE_IPTABLES_FOR_MDNS}}"
+          },
+          {
+            "type": "command",
             "value": "systemctl start docker"
           },
           {
