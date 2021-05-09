@@ -10,10 +10,6 @@
             "value": "tar, bzip2"
           },
           {
-            "type": "deploy",
-            "value": "{{SYSTEM.HOME}}/Core/Utils:{{SERVER.SERVER_HOME}}/Utils"
-          },
-          {
             "type": "skipCondition",
             "value": "docker --version"
           },
@@ -31,7 +27,7 @@
           },
           {
             "type": "command",
-            "value": "sh {{SERVER.SERVER_HOME}}/Utils/setenforce.sh"
+            "value": "sh {{SERVER.UTILS_HOME}}/setenforce.sh"
           },
           {
             "type": "packagesErase",
@@ -51,11 +47,19 @@
           },
           {
             "type": "command",
+            "value": "sh {{SERVER.UTILS_HOME}}/disable_iptables_for_avahi_mdns.sh {{BEHAVIOR.DISABLE_IPTABLES_FOR_MDNS}}"
+          },
+          {
+            "type": "command",
             "value": "systemctl start docker"
           },
           {
             "type": "command",
-            "value": "docker run --rm hello-world"
+            "value": "docker login -u '{{DOCKER.LOGIN.ACCOUNT}}' -p '{{DOCKER.LOGIN.PASSWORD}}'"
+          },
+          {
+            "type": "command",
+            "value": "sh {{SERVER.UTILS_HOME}}/docker_configuration_proxy_init.sh {{PROXY.HOST}} {{PROXY.PORT}} {{PROXY.ACCOUNT}} {{PROXY.PASSWORD}} true"
           },
           {
             "type": "command",

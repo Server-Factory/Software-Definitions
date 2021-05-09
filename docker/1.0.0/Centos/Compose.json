@@ -23,11 +23,11 @@
           },
           {
             "type": "command",
-            "value": "curl -L \"https://github.com/docker/compose/releases/download/{{DOCKER.DOCKER_COMPOSE_VERSION}}/docker-compose-$(uname -s)-$(uname -m)\" -o {{DOCKER.DOCKER_COMPOSE_PATH}}/docker-compose"
+            "value": "curl -L \"https://github.com/docker/compose/releases/download/{{DOCKER.COMPOSE_VERSION}}/docker-compose-$(uname -s)-$(uname -m)\" -o {{DOCKER.COMPOSE_PATH}}/docker-compose"
           },
           {
             "type": "command",
-            "value": "chmod +x {{DOCKER.DOCKER_COMPOSE_PATH}}/docker-compose"
+            "value": "chmod +x {{DOCKER.COMPOSE_PATH}}/docker-compose"
           },
           {
             "type": "command",
@@ -53,11 +53,11 @@
           },
           {
             "type": "command",
-            "value": "curl -L \"https://github.com/docker/compose/releases/download/{{DOCKER.DOCKER_COMPOSE_VERSION}}/docker-compose-$(uname -s)-$(uname -m)\" -o {{DOCKER.DOCKER_COMPOSE_PATH}}/docker-compose"
+            "value": "curl -L \"https://github.com/docker/compose/releases/download/{{DOCKER.COMPOSE_VERSION}}/docker-compose-$(uname -s)-$(uname -m)\" -o {{DOCKER.COMPOSE_PATH}}/docker-compose"
           },
           {
             "type": "command",
-            "value": "chmod +x {{DOCKER.DOCKER_COMPOSE_PATH}}/docker-compose"
+            "value": "chmod +x {{DOCKER.COMPOSE_PATH}}/docker-compose"
           },
           {
             "type": "command",

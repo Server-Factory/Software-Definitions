@@ -6,24 +6,12 @@
       "installationSteps": {
         "Ubuntu": [
           {
-            "type": "deploy",
-            "value": "{{SYSTEM.HOME}}/Core/Utils:{{SERVER.SERVER_HOME}}/Utils"
-          },
-          {
             "type": "skipCondition",
             "value": "docker --version"
           },
           {
             "type": "command",
-            "value": "apt update -y"
-          },
-          {
-            "type": "command",
-            "value": "apt upgrade -y"
-          },
-          {
-            "type": "command",
-            "value": "apt autoremove -y"
+            "value": "export DEBIAN_FRONTEND=noninteractive; apt-get update && apt-get -o Dpkg::Options::=\"--force-confold\" upgrade -q -y --force-yes && apt-get -o Dpkg::Options::=\"--force-confold\" dist-upgrade -q -y --force-yes"
           },
           {
             "type": "packages",
@@ -47,11 +35,15 @@
           },
           {
             "type": "packages",
-            "value": "docker-ce=5:20.10.1~3-0~ubuntu-focal, docker-ce-cli=5:20.10.1~3-0~ubuntu-focal, containerd.io, telnet"
+            "value": "docker-ce, docker-ce-cli, containerd.io, telnet"
           },
           {
             "type": "command",
-            "value": "docker run --rm hello-world"
+            "value": "docker login -u '{{DOCKER.LOGIN.ACCOUNT}}' -p '{{DOCKER.LOGIN.PASSWORD}}'"
+          },
+          {
+            "type": "command",
+            "value": "sh {{SERVER.UTILS_HOME}}/docker_configuration_proxy_init.sh {{PROXY.HOST}} {{PROXY.PORT}} {{PROXY.ACCOUNT}} {{PROXY.PASSWORD}} true"
           },
           {
             "type": "reboot",

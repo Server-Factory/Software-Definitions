@@ -28,11 +28,11 @@
           },
           {
             "type": "command",
-            "value": "mkdir -p {{SERVER.SERVER_HOME}}/Server/EasyRSA"
+            "value": "mkdir -p {{SERVER.HOME}}/Server/EasyRSA"
           },
           {
             "type": "command",
-            "value": "tar -xvf EasyRSA-3.0.7.tgz -C {{SERVER.SERVER_HOME}}/Server/EasyRSA"
+            "value": "tar -xvf EasyRSA-3.0.7.tgz -C {{SERVER.HOME}}/Server/EasyRSA"
           },
           {
             "type": "command",
@@ -40,7 +40,7 @@
           },
           {
             "type": "command",
-            "value": "chmod -R 700 {{SERVER.SERVER_HOME}}/Server/EasyRSA"
+            "value": "chmod -R 700 {{SERVER.HOME}}/Server/EasyRSA"
           },
           {
             "type": "command",
@@ -48,7 +48,7 @@
           },
           {
             "type": "command",
-            "value": "ln -s {{SERVER.SERVER_HOME}}/Server/EasyRSA/EasyRSA-3.0.7/* {{SERVER.CERTIFICATION.HOME}}"
+            "value": "ln -s {{SERVER.HOME}}/Server/EasyRSA/EasyRSA-3.0.7/* {{SERVER.CERTIFICATION.HOME}}"
           },
           {
             "type": "deploy",
