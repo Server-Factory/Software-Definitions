@@ -1,0 +1,80 @@
+{
+  "software": [
+    {
+      "name": "Docker",
+      "version": "19.03",
+      "installationSteps": {
+        "Rocky": [
+          {
+            "type": "packages",
+            "value": "tar, bzip2"
+          },
+          {
+            "type": "skipCondition",
+            "value": "docker --version"
+          },
+          {
+            "type": "packageGroup",
+            "value": "Development Tools"
+          },
+          {
+            "type": "packages",
+            "value": "yum-utils, device-mapper-persistent-data, lvm2"
+          },
+          {
+            "type": "command",
+            "value": "dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo"
+          },
+          {
+            "type": "command",
+            "value": "sh {{SERVER.UTILS_HOME}}/setenforce.sh"
+          },
+          {
+            "type": "packagesErase",
+            "value": "podman, buildah, nftables"
+          },
+          {
+            "type": "packages",
+            "value": "iptables, iptables-services, docker-ce, docker-ce-cli, containerd.io, telnet"
+          },
+          {
+            "type": "command",
+            "value": "systemctl enable iptables"
+          },
+          {
+            "type": "command",
+            "value": "systemctl start iptables"
+          },
+          {
+            "type": "command",
+            "value": "sh {{SERVER.UTILS_HOME}}/disable_iptables_for_avahi_mdns.sh {{BEHAVIOR.DISABLE_IPTABLES_FOR_MDNS}}"
+          },
+          {
+            "type": "command",
+            "value": "systemctl start docker"
+          },
+          {
+            "type": "command",
+            "value": "docker login -u '{{DOCKER.LOGIN.ACCOUNT}}' -p '{{DOCKER.LOGIN.PASSWORD}}'"
+          },
+          {
+            "type": "command",
+            "value": "sh {{SERVER.UTILS_HOME}}/docker_configuration_proxy_init.sh {{PROXY.HOST}} {{PROXY.PORT}} {{PROXY.ACCOUNT}} {{PROXY.PASSWORD}} true"
+          },
+          {
+            "type": "command",
+            "value": "systemctl enable docker"
+          },
+          {
+            "type": "reboot",
+            "value": "480"
+          },
+          {
+            "type": "command",
+            "value": "docker run --rm hello-world"
+          }
+        ]
+      }
+    }
+  ]
+}

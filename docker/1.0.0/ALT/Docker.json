@@ -1,0 +1,60 @@
+{
+  "software": [
+    {
+      "name": "Docker",
+      "version": "19.03",
+      "installationSteps": {
+        "ALT": [
+          {
+            "type": "skipCondition",
+            "value": "docker --version"
+          },
+          {
+            "type": "comment",
+            "value": "ALT Linux uses apt-rpm (APT interface with RPM packages)"
+          },
+          {
+            "type": "command",
+            "value": "apt-get update"
+          },
+          {
+            "type": "packages",
+            "value": "apt-transport-https, ca-certificates, curl"
+          },
+          {
+            "type": "comment",
+            "value": "Installing Docker from ALT repositories or docker.com"
+          },
+          {
+            "type": "packages",
+            "value": "docker-ce, telnet"
+          },
+          {
+            "type": "command",
+            "value": "systemctl enable docker"
+          },
+          {
+            "type": "command",
+            "value": "systemctl start docker"
+          },
+          {
+            "type": "command",
+            "value": "docker login -u '{{DOCKER.LOGIN.ACCOUNT}}' -p '{{DOCKER.LOGIN.PASSWORD}}'"
+          },
+          {
+            "type": "command",
+            "value": "sh {{SERVER.UTILS_HOME}}/docker_configuration_proxy_init.sh {{PROXY.HOST}} {{PROXY.PORT}} {{PROXY.ACCOUNT}} {{PROXY.PASSWORD}} true"
+          },
+          {
+            "type": "reboot",
+            "value": "480"
+          },
+          {
+            "type": "command",
+            "value": "docker run --rm hello-world"
+          }
+        ]
+      }
+    }
+  ]
+}

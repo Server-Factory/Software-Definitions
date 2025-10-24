@@ -1,0 +1,60 @@
+{
+  "software": [
+    {
+      "name": "Docker",
+      "version": "19.03",
+      "installationSteps": {
+        "openSUSE": [
+          {
+            "type": "skipCondition",
+            "value": "docker --version"
+          },
+          {
+            "type": "command",
+            "value": "zypper refresh"
+          },
+          {
+            "type": "command",
+            "value": "zypper install -y curl ca-certificates"
+          },
+          {
+            "type": "command",
+            "value": "zypper addrepo https://download.docker.com/linux/sles/docker-ce.repo"
+          },
+          {
+            "type": "command",
+            "value": "zypper refresh"
+          },
+          {
+            "type": "packages",
+            "value": "docker-ce, docker-ce-cli, containerd.io, telnet"
+          },
+          {
+            "type": "command",
+            "value": "systemctl enable docker"
+          },
+          {
+            "type": "command",
+            "value": "systemctl start docker"
+          },
+          {
+            "type": "command",
+            "value": "docker login -u '{{DOCKER.LOGIN.ACCOUNT}}' -p '{{DOCKER.LOGIN.PASSWORD}}'"
+          },
+          {
+            "type": "command",
+            "value": "sh {{SERVER.UTILS_HOME}}/docker_configuration_proxy_init.sh {{PROXY.HOST}} {{PROXY.PORT}} {{PROXY.ACCOUNT}} {{PROXY.PASSWORD}} true"
+          },
+          {
+            "type": "reboot",
+            "value": "480"
+          },
+          {
+            "type": "command",
+            "value": "docker run --rm hello-world"
+          }
+        ]
+      }
+    }
+  ]
+}

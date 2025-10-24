@@ -1,0 +1,44 @@
+{
+  "software": [
+    {
+      "name": "Docker Compose",
+      "version": "1.25.4",
+      "installationSteps": {
+        "Debian": [
+          {
+            "type": "skipCondition",
+            "value": "docker-compose --version"
+          },
+          {
+            "type": "command",
+            "value": "apt autoremove -y"
+          },
+          {
+            "type": "packages",
+            "value": "python3, python3-pip"
+          },
+          {
+            "type": "command",
+            "value": "pip3 --version"
+          },
+          {
+            "type": "packages",
+            "value": "python3-dev, libffi-dev, libssl-dev, build-essential"
+          },
+          {
+            "type": "command",
+            "value": "curl -L \"https://github.com/docker/compose/releases/download/{{DOCKER.COMPOSE_VERSION}}/docker-compose-$(uname -s)-$(uname -m)\" -o {{DOCKER.COMPOSE_PATH}}/docker-compose"
+          },
+          {
+            "type": "command",
+            "value": "chmod +x {{DOCKER.COMPOSE_PATH}}/docker-compose"
+          },
+          {
+            "type": "command",
+            "value": "docker-compose --version"
+          }
+        ]
+      }
+    }
+  ]
+}
