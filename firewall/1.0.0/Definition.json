@@ -1,0 +1,19 @@
+{
+  "definition": {
+    "group": "main",
+    "type": "software",
+    "version": "1.0.0",
+    "name": "firewall"
+  },
+  "variables": {
+    "FIREWALL": {
+      "MAIL_PORTS": "25,587,465,993,995",
+      "SSH_PORT": "22"
+    }
+  },
+  "includes": [
+    "Centos/Firewall.json",
+    "Fedora/Firewall.json",
+    "Ubuntu/Firewall.json"
+  ]
+}

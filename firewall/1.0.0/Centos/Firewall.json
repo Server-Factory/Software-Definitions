@@ -1,0 +1,36 @@
+{
+  "software": [
+    {
+      "name": "Firewall Configuration for Mail Server",
+      "version": "1.0.0",
+      "installationSteps": {
+        "CentOS": [
+          {
+            "type": "command",
+            "value": "systemctl enable firewalld"
+          },
+          {
+            "type": "command",
+            "value": "systemctl start firewalld"
+          },
+          {
+            "type": "command",
+            "value": "firewall-cmd --permanent --add-port={{FIREWALL.SSH_PORT}}/tcp"
+          },
+          {
+            "type": "command",
+            "value": "firewall-cmd --permanent --add-port={{FIREWALL.MAIL_PORTS}}/tcp"
+          },
+          {
+            "type": "command",
+            "value": "firewall-cmd --reload"
+          },
+          {
+            "type": "command",
+            "value": "firewall-cmd --list-all"
+          }
+        ]
+      }
+    }
+  ]
+}

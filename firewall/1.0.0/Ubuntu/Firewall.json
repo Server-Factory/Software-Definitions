@@ -1,0 +1,28 @@
+{
+  "software": [
+    {
+      "name": "Firewall Configuration for Mail Server",
+      "version": "1.0.0",
+      "installationSteps": {
+        "Ubuntu": [
+          {
+            "type": "command",
+            "value": "ufw --force enable"
+          },
+          {
+            "type": "command",
+            "value": "ufw allow {{FIREWALL.SSH_PORT}}/tcp"
+          },
+          {
+            "type": "command",
+            "value": "ufw allow {{FIREWALL.MAIL_PORTS}}/tcp"
+          },
+          {
+            "type": "command",
+            "value": "ufw status"
+          }
+        ]
+      }
+    }
+  ]
+}
